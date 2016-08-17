@@ -1,0 +1,78 @@
+-----------------
+GCLOUD VM SETUP
+Instructions for setting up an Ubuntu 16.04 VM using Google Cloud Compute Engine
+I have linked articles to give better explanations for some of the work arounds
+that were needed.
+-----------------
+
+INITIAL CLEANUP:
+-----------------
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install htop
+
+UPGRADING R:
+-----------------
+The R provided by the package manager in Ubuntu 16.04 is a couple of versions old
+so we need to add CRAN to the package managers list of places to check.
+
+http://askubuntu.com/questions/218708/installing-latest-version-of-r-base
+https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04
+sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
+gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+gpg -a --export E084DAB9 | sudo apt-key add -
+
+sudo apt-get update
+sudo apt-get install r-base
+
+R DEVTOOLS:
+-----------------
+We need to get install the devtools package for R. This requires first installing
+some dependencies.
+
+http://unix.stackexchange.com/questions/281674/how-to-install-rs-devtools-and-digitize
+sudo apt-get install libssl-dev
+
+sudo apt-get install libzmq3-dev
+
+http://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package
+sudo apt-get install libcurl4-gnutls-dev
+
+We can now install devtools and a couple of other packages needed for Jupyter.
+
+In R terminal,
+install.packages(c('crayon', 'pbdZMQ', 'devtools'))
+
+UPDATING PYTHON:
+-----------------
+sudo apt-get install python3
+sudo apt-get install python3-pip
+
+sudo apt-get install python3-numpy
+sudo apt-get install python3-scipy
+sudo apt-get install python3-matplotlib
+sudo apt-get install python3-seaborn
+sudo apt-get install python3-pandas
+sudo pip3 install jupyter
+
+R JUPYTER KERNEL:
+-----------------
+https://irkernel.github.io/installation/
+
+In R terminal,
+install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))
+devtools::install_github('IRkernel/IRkernel')
+IRkernel::installspec()
+
+USING THE SETUP:
+-----------------
+Need to install the Google Cloud SDK on your local machine. Follow the steps to set the local environment
+to your particular gcloud instance.
+https://cloud.google.com/sdk/downloads
+
+Now to actually do some computing.
+Run this on remote:
+jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
+
+Run this on local:
+gcloud compute ssh --ssh-flag="-f" --ssh-flag="-N" --ssh-flag="-L localhost:8888:0.0.0.0:8888" <instance_name>
