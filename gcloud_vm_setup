@@ -64,6 +64,15 @@ install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtool
 devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec()
 
+R PACKAGES:
+-----------------
+Install below for rvest:
+sudo apt-get install libxml2-dev 
+
+Install a bunch of Hadley packages:
+In R terminal,
+install.packages(c('dplyr', 'tidyr', 'stringr', 'readr', 'lubridate', 'ggplot2', 'readxl', 'rvest'))
+
 USING THE SETUP:
 -----------------
 Need to install the Google Cloud SDK on your local machine. Follow the steps to set the local environment
@@ -75,4 +84,4 @@ Run this on remote:
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
 
 Run this on local:
-gcloud compute ssh --ssh-flag="-f" --ssh-flag="-N" --ssh-flag="-L localhost:8888:0.0.0.0:8888" <instance_name>
+gcloud compute ssh --ssh-flag="-N" --ssh-flag="-L localhost:8888:0.0.0.0:8888" <instance_name>
