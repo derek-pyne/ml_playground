@@ -1,18 +1,18 @@
------------------
+---------------
 GCLOUD VM SETUP
 Instructions for setting up an Ubuntu 16.04 VM using Google Cloud Compute Engine
 I have linked articles to give better explanations for some of the work arounds
 that were needed.
------------------
+---------------
 
 INITIAL CLEANUP:
------------------
+----------------
 sudo apt-get update
 sudo apt-get dist-upgrade
 sudo apt-get install htop
 
 UPGRADING R:
------------------
+------------
 The R provided by the package manager in Ubuntu 16.04 is a couple of versions old
 so we need to add CRAN to the package managers list of places to check.
 
@@ -26,7 +26,7 @@ sudo apt-get update
 sudo apt-get install r-base
 
 R DEVTOOLS:
------------------
+-----------
 We need to get install the devtools package for R. This requires first installing
 some dependencies.
 
@@ -44,7 +44,7 @@ In R terminal,
 install.packages(c('crayon', 'pbdZMQ', 'devtools'))
 
 UPDATING PYTHON:
------------------
+----------------
 sudo apt-get install python3
 sudo apt-get install python3-pip
 
@@ -65,7 +65,7 @@ devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec()
 
 R PACKAGES:
------------------
+-----------
 Install below for rvest:
 sudo apt-get install libxml2-dev 
 
@@ -74,7 +74,7 @@ In R terminal,
 install.packages(c('dplyr', 'tidyr', 'stringr', 'readr', 'lubridate', 'ggplot2', 'readxl', 'rvest'))
 
 USING THE SETUP:
------------------
+----------------
 Need to install the Google Cloud SDK on your local machine. Follow the steps to set the local environment
 to your particular gcloud instance.
 https://cloud.google.com/sdk/downloads
@@ -85,3 +85,13 @@ jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
 
 Run this on local:
 gcloud compute ssh --ssh-flag="-N" --ssh-flag="-L localhost:8888:0.0.0.0:8888" <instance_name>
+
+WORKING WITH KAGGLE DATASETS:
+-----------------------------
+To download Kaggle datasets requires login credentials. There is a nice package that helps with this:
+https://github.com/floydwch/kaggle-cli
+
+Did not work with pip3, so we also need to install pip:
+sudo apt-get install python-lxml
+sudo apt install python-pip
+sudo pip install kaggle-cli
