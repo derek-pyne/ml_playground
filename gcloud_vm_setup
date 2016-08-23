@@ -78,6 +78,7 @@ Install a bunch of Hadley packages:
 In R terminal,
 sudo R
 install.packages(c('dplyr', 'tidyr', 'stringr', 'readr', 'lubridate', 'ggplot2', 'readxl', 'rvest', 'purrr'))
+install.packages(c('caret, 'randomForest'))
 
 USING THE SETUP:
 ----------------
@@ -101,3 +102,6 @@ Does not work with python 3 so we need to make sure to use pip2:
 sudo apt install python-lxml
 sudo pip2 install stevedore PrettyTable cmd2 (might not be needed, haven't tried from clean start)
 sudo pip2 install kaggle-cli
+
+Useful for unpacking:
+sudo apt install p7zip-full
