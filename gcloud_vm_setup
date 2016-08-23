@@ -97,7 +97,7 @@ WORKING WITH KAGGLE DATASETS:
 To download Kaggle datasets requires login credentials. There is a nice package that helps with this:
 https://github.com/floydwch/kaggle-cli
 
-Did not work with pip3, so we also need to install pip:
+Does not work with python 3 so we need to make sure to use pip2:
 sudo apt install python-lxml
-sudo apt install python-pip
-sudo pip install kaggle-cli
+sudo pip2 install stevedore PrettyTable cmd2 (might not be needed, haven't tried from clean start)
+sudo pip2 install kaggle-cli
