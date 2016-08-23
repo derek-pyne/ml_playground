@@ -41,7 +41,8 @@ sudo apt install libcurl4-gnutls-dev
 
 We can now install devtools and a couple of other packages needed for Jupyter.
 
-In R terminal,
+In R terminal, need to be superuser to install packages to default location:
+sudo R
 install.packages(c('crayon', 'pbdZMQ', 'devtools'))
 
 UPDATING PYTHON:
@@ -63,6 +64,7 @@ R JUPYTER KERNEL:
 https://irkernel.github.io/installation/
 
 In R terminal,
+sudo R
 install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))
 devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec()
@@ -74,6 +76,7 @@ sudo apt install libxml2-dev
 
 Install a bunch of Hadley packages:
 In R terminal,
+sudo R
 install.packages(c('dplyr', 'tidyr', 'stringr', 'readr', 'lubridate', 'ggplot2', 'readxl', 'rvest'))
 
 USING THE SETUP:
