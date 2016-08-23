@@ -87,7 +87,7 @@ https://cloud.google.com/sdk/downloads
 
 Now to actually do some computing.
 Run this on remote:
-jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
+sudo jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser
 
 Run this on local:
 gcloud compute ssh --ssh-flag="-N" --ssh-flag="-L localhost:8888:0.0.0.0:8888" <instance_name>
