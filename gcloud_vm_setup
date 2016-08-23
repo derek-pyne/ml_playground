@@ -7,9 +7,10 @@ that were needed.
 
 INITIAL CLEANUP:
 ----------------
-sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt-get install htop
+sudo apt update
+sudo apt dist-upgrade
+-Restart instance
+sudo apt install htop
 
 UPGRADING R:
 ------------
@@ -22,8 +23,8 @@ sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/
 gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 gpg -a --export E084DAB9 | sudo apt-key add -
 
-sudo apt-get update
-sudo apt-get install r-base
+sudo apt update
+sudo apt install r-base
 
 R DEVTOOLS:
 -----------
@@ -31,12 +32,12 @@ We need to get install the devtools package for R. This requires first installin
 some dependencies.
 
 http://unix.stackexchange.com/questions/281674/how-to-install-rs-devtools-and-digitize
-sudo apt-get install libssl-dev
+sudo apt install libssl-dev
 
-sudo apt-get install libzmq3-dev
+sudo apt install libzmq3-dev
 
 http://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package
-sudo apt-get install libcurl4-gnutls-dev
+sudo apt install libcurl4-gnutls-dev
 
 We can now install devtools and a couple of other packages needed for Jupyter.
 
@@ -45,15 +46,15 @@ install.packages(c('crayon', 'pbdZMQ', 'devtools'))
 
 UPDATING PYTHON:
 ----------------
-sudo apt-get install python3
-sudo apt-get install python3-pip
+sudo apt install python3
+sudo apt install python3-pip
 sudo pip3 install --upgrade pip
 
 sudo pip3 install numpy
 sudo pip3 install scipy
 sudo pip3 install matplotlib
-sudo pip3 install seaborn
 sudo pip3 install pandas
+sudo pip3 install seaborn
 sudo pip3 install sklearn
 sudo pip3 install jupyter
 
@@ -69,7 +70,7 @@ IRkernel::installspec()
 R PACKAGES:
 -----------
 Install below for rvest:
-sudo apt-get install libxml2-dev 
+sudo apt install libxml2-dev 
 
 Install a bunch of Hadley packages:
 In R terminal,
@@ -94,6 +95,6 @@ To download Kaggle datasets requires login credentials. There is a nice package 
 https://github.com/floydwch/kaggle-cli
 
 Did not work with pip3, so we also need to install pip:
-sudo apt-get install python-lxml
+sudo apt install python-lxml
 sudo apt install python-pip
 sudo pip install kaggle-cli
