@@ -77,7 +77,7 @@ sudo apt install libxml2-dev
 Install a bunch of Hadley packages:
 In R terminal,
 sudo R
-install.packages(c('dplyr', 'tidyr', 'stringr', 'readr', 'lubridate', 'ggplot2', 'readxl', 'rvest'))
+install.packages(c('dplyr', 'tidyr', 'stringr', 'readr', 'lubridate', 'ggplot2', 'readxl', 'rvest', 'purrr'))
 
 USING THE SETUP:
 ----------------
