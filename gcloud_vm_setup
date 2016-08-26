@@ -105,3 +105,9 @@ sudo pip2 install kaggle-cli
 
 Useful for unpacking:
 sudo apt install p7zip-full
+
+ADDING REPOSITORY
+-----------------
+sudo git clone https://github.com/tesla745/ml_playground.git
+sudo git config --global user.email "<email>"
+sudo git config --global user.name "<name>"
