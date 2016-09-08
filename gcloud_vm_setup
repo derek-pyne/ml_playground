@@ -58,6 +58,7 @@ sudo pip3 install pandas
 sudo pip3 install seaborn
 sudo pip3 install sklearn
 sudo pip3 install jupyter
+sudo pip3 install joblib
 
 R JUPYTER KERNEL:
 -----------------
