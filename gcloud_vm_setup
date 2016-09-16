@@ -79,7 +79,7 @@ Install a bunch of Hadley packages:
 In R terminal,
 sudo R
 install.packages(c('dplyr', 'tidyr', 'stringr', 'readr', 'lubridate', 'ggplot2', 'readxl', 'rvest', 'purrr'))
-install.packages(c('caret, 'randomForest'))
+install.packages(c('caret', 'randomForest'))
 
 USING THE SETUP:
 ----------------
