@@ -1,0 +1,7 @@
+mongoimport --collection restaurants --drop --file primer-dataset.json --uri "mongodb://alfred:dsfklj4klnsdf@alfred-shard-00-00-tvubi.mongodb.net:27017,alfred-shard-00-01-tvubi.mongodb.net:27017,alfred-shard-00-02-tvubi.mongodb.net:27017/test?ssl=true&replicaSet=Alfred-shard-0&authSource=admin"
+
+2017-10-01T16:30:13.504-0400    connected to: localhost
+2017-10-01T16:30:13.531-0400    dropping: test.restaurants
+2017-10-01T16:30:16.251-0400    [################........] test.restaurants 7.64MB/11.2MB (68.0%)
+2017-10-01T16:30:17.430-0400    [########################] test.restaurants 11.2MB/11.2MB (100.0%)
+2017-10-01T16:30:17.430-0400    imported 25359 documents
