@@ -1,4 +1,4 @@
-# Chapter One
+# Chapter One: The Machine Learning Landscape
 1. How would you define Machine Learning?
     - Machine learning is any system that performs better as it is exposed to more data.
 2. Can you name four types of problems where it shines?
@@ -42,3 +42,16 @@
 16. What is a test set and why would you want to use it?
     - A test set is used to gauge the performance of the model on data that it did not see during training. This provides a better estimate of how the model will perform in the real world.
  
+# Chapter 2: Training
+1. What Linear Regression training algorithm can you use if you have a training set with millions of features?
+    - Gradient descent algorithms work will for larger number of features and samples. If the number of samples if too large to fit in memory, batch or stochastic gradient descent can be used.
+2. Suppose the features in your training set have very different scales. What algorithms might suffer from this, and how? What can you do about it?
+    - Algorithms that use the euclidean distance between samples will suffer, such as linear regression with an RMSE cost function. They will overvalue fitting features with a larger scale. To avoid this, features can be scaled using a standard or min-max scaler.
+3. Can Gradient Descent get stuck in a local minimum when training a Logistic Regression model?
+    - No, this model is always globally convex so there are no local minima for the model to get stuck in.
+4. Do all Gradient Descent algorithms lead to the same model provided you let them run long enough?
+    - Almost. Batch and Stochastic Gradient Descent will finish with some variation around the global minima due to the variance caused by using subsets of the training data.
+5. Suppose you use Batch Gradient Descent and you plot the validation error at every epoch. If you notice that the validation error consistently goes up, what is likely going on? How can you fix this?
+    - Likely the model is oscillating unstabily due to a learning rate that is too high. Thi is likely the case if the training error is also rising. In this cae decrease the learning rate until the validation error decreases on most epochs (there will be some expected variation from the batch nature). However, if the training error is going down, then the model is likely overfitting and regularization parameters should be increased.
+6. Is it a good idea to stop Mini-Batch Gradient Descent immediately when the validation error goes up?
+    - No. There is some expected variance expected because of the batch sampling. It is good to continue training for another couple of epochs after the validation error goes up to ensure that it continues to go up and is not simply caused by noise.
