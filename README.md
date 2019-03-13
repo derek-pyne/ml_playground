@@ -6,3 +6,4 @@ To avoid putting the large datasets in the repository, all the datasets are put 
 
 ## Computation Setup
 Each project is done in a Jupyter notebook. Instructions are given for setting up your virtual machine on the Google Cloud, running your Jupyter Notebook server on the remote machine, and then opening an ssh tunnel to it on your local machine. This allows for serious computational resources to be used at an incredibly cheap rate. For me this meant being able to keep my beloved Macbook Air and avoid buying a larger machine :) 
+
