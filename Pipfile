@@ -11,6 +11,7 @@ numpy = "*"
 pandas = "*"
 seaborn = "*"
 jupyterlab = "*"
+statsmodels = "*"
 
 [requires]
 python_version = "3.7"
