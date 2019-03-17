@@ -14,6 +14,7 @@ jupyterlab = "*"
 statsmodels = "*"
 sklearn = "*"
 scipy = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.7"
