@@ -16,7 +16,6 @@ sklearn = "*"
 scipy = "*"
 tensorflow = "*"
 keras = "*"
-pil = "*"
 pillow = "*"
 
 [requires]
